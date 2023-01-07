@@ -130,9 +130,3 @@ function variable_scope(){
 }
 
 variable_scope();
-
-function print(param1, param2){
-    var x; //Function scoped
-    let y; //block scoped
-    const z = "what";//block scoped
-}
