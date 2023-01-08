@@ -11,4 +11,4 @@ function greeting(){
 }
 
 let hi = greeting();
-hi()
+hi();
