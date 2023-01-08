@@ -45,3 +45,12 @@ getTodoCallback(function (data){
    console.log(data.text);
 });
 
+
+
+
+function abc(){
+
+    return function xyz(){
+        
+    }
+}
