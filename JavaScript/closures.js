@@ -1,10 +1,10 @@
-//function calling function
+//function returning function
 
 function greeting(){
-    let message = 'hi'
+    let message = 'hi';
 
     function sayHi(){
-        console.log(message)
+        console.log(message);
     }
 
     return sayHi;
@@ -14,22 +14,57 @@ let hi = greeting();
 hi();
 
 
-// let counter = 0;
-function add(counter){
+//let counter = 0;
+const add = (function(){   
     let counter = 0;
-    
-    return function(){
-        counter += 1
+    return {
+        increment: function(){
+        counter +=1;
         return counter;
+    },   
+        decrement: function(){
+            counter -=1;
+        return counter;
+        }
     }
+})();
+
+console.log(add.increment());
+console.log(add.increment());
+console.log(add.decrement());
+//console.log(add());
+
+//IIFE
+//function statement
+function abc(){
+}
+abc();
+
+//function expression
+let abc1 = function (param){
 }
 
-console.log(add());
-console.log(add());
+abc1("parameter");
 
-let x1 = add(0);
-console.log(x1)
-let x2 = add(x1);
-console.log(x2)
+(function(param){
+    console.log(param);
+})("parameter1");
+//iife(); //no need to call explicitly
+//console.log(add());
 
-// console.log(add());
+
+for(var index=1; index<=3; index++){    
+    (function(index){
+        setTimeout(function(){
+        console.log('after ' + index + 'seconds ' + index);
+    },index*1000)})(index);
+}
+
+for(let index=1; index<=3; index++){       
+        setTimeout(function(){
+        console.log('after ' + index + 'seconds ' + index);
+    },index*1000);
+}
+
+
+
